@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 25px;
+}
+
+.card-contaner {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+}
+
+.card {
+  position: relative;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.263);
+  border-radius: 5px;
+  padding: 15px;
+}
+.card:hover .card-image {
+  transform: translate(-33%, -27%);
+}
+.card:hover .card-image img {
+  transform: scale(0.5);
+}
+.card:hover .titile {
+  transform: translate(0, -100px);
+}
+.card:hover .spec {
+  opacity: 1;
+}
+
+.card-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  transition: 0.2s ease-in-out;
+}
+.card-image img {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+  transition: 0.2s ease-in-out;
+  margin: 0 0 20px 0;
+}
+
+.titile {
+  transition: 0.2s ease-in-out;
+}
+.titile h2 {
+  text-align: center;
+  font: 600 20px "Quicksand", sans-serif;
+}
+
+.spec {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  background-color: #ffffff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 99%;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+.spec .spec-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font: 400 16px "Quicksand", sans-serif;
+}
+.spec .spec-item p {
+  color: rgb(187, 187, 187);
+}
+.spec .spec-item p:last-child {
+  color: rgb(45, 149, 235);
+  font-weight: 600;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,100 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	padding: 25px;
+}
+
+$ff: 'Quicksand', sans-serif;
+$fsb: 600; // font size bold
+$fsl: 400; // font size light
+
+.card-contaner {
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+}
+
+.card {
+	position: relative;
+	box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.263);
+	border-radius: 5px;
+	padding: 15px;
+
+	&:hover {
+		.card-image {
+			transform: translate(-33%, -27%);
+
+			img {
+				transform: scale(0.5);
+			}
+		}
+
+		.titile {
+			transform: translate(0, -100px);
+		}
+
+		.spec {
+			opacity: 1;
+		}
+	}
+}
+
+.card-image {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	transition: .2s ease-in-out;
+
+	img {
+		width: 200px;
+		height: 200px;
+		object-fit: scale-down;
+		transition: .2s ease-in-out;
+		margin: 0 0 20px 0;
+	}
+}
+
+
+
+.titile {
+	transition: .2s ease-in-out;
+
+	h2 {
+		text-align: center;
+		font: $fsb 20px $ff;
+	}
+}
+
+.spec {
+	position: absolute;
+	bottom: 2px;
+	left: 0;
+	background-color: #ffffff;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 99%;
+	opacity: 0;
+	transition: .2s ease-in-out;
+
+	.spec-item {
+		display: flex;
+		justify-content: space-between;
+		gap: 10px;
+		font: $fsl 16px $ff;
+
+		p {
+			color: rgb(187, 187, 187);
+
+			&:last-child {
+				color: rgb(45, 149, 235);
+				font-weight: $fsb;
+			}
+		}
+	}
+}
